@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ScooterSharing</string>
+    <string name="last_added">Last added:</string>
+    <string name="name">Name:</string>
+    <string name="where">Where:</string>
+    <string name="add_ride">Add Ride</string>
+</resources>
