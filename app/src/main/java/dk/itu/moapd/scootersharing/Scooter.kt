@@ -1,16 +1,28 @@
 package dk.itu.moapd.scootersharing
 
+import java.text.SimpleDateFormat
+import java.util.*
+
 class Scooter{
     private var name: String =""
     private var where:String =""
+    private var timestamp:Long=System.currentTimeMillis()
 
-    constructor(name: String, where: String){
+    constructor(name: String, where: String, timestamp: Long){
         this.name = name
         this.where = where
+        this.timestamp = timestamp
     }
     //removed getter and setters since they could be auto generated
 
     override fun toString(): String {
-        return "$name is placed at $where"
+        val timestamp = convertLongToTime(timestamp)
+        return "$name is placed at $where : $timestamp "
+    }
+
+    private fun convertLongToTime (time:Long) :String {
+        val date = Date(time)
+        val format = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
+        return format.format(date)
     }
 }

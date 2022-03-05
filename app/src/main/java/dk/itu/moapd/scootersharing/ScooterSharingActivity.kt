@@ -1,5 +1,6 @@
 package dk.itu.moapd.scootersharing
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dk.itu.moapd.scootersharing.databinding.ActivityScooterSharingBinding
@@ -15,32 +16,22 @@ class ScooterSharingActivity : AppCompatActivity() {
         binding = ActivityScooterSharingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Edit texts
-        val lastAddedText = binding.lastAddedText
-        val nameText = binding.nameText
-        val whereText = binding.whereText
-
-        //Buttons
-//        addButton = findViewById(R.id.)
-        val addButton = binding.addButton
-        addButton.setOnClickListener {
-            if (nameText.text.isNotEmpty() &&
-                    whereText.text.isNotEmpty()) {
-                //update the object attributes
-                val name = nameText.text.toString().trim()
-                val where = whereText.text.toString().trim()
-                val formScooter = Scooter(name, where)
-
-                //Reset the text fields and update the UI
-                lastAddedText.setText("")
-                nameText.setText("")
-                whereText.setText("")
-                updateUI(formScooter)
-            }
-
+        val startRideButton = binding.startButton
+        val editRideButton = binding.editRide
+        startRideButton.setOnClickListener {
+            openStartRideActivity();
+        }
+        editRideButton.setOnClickListener {
+            openEditRideActivity();
         }
     }
-    private fun updateUI(update:Scooter){
-        binding.lastAddedText.setText(update.toString())
+    private fun openStartRideActivity() {
+        val intent = Intent(this, StartRideActivity::class.java)
+        startActivity(intent)
     }
+    private fun openEditRideActivity() {
+        val intent = Intent(this, EditRideActivity::class.java)
+        startActivity(intent)
+    }
+
 }

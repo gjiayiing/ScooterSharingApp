@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScooterSharing">
         <activity
+            android:name=".EditRideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartRideActivity"
+            android:exported="false" />
+        <activity
             android:name=".ScooterSharingActivity"
             android:exported="true">
             <intent-filter>
