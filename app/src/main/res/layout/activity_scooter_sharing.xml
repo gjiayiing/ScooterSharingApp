@@ -13,7 +13,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="515dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -21,12 +21,25 @@
             android:id="@+id/start_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start Ride" />
+            android:text="@string/start_name" />
 
         <Button
             android:id="@+id/edit_ride"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit Ride" />
+            android:text="@string/edit_ride" />
+
+        <Button
+            android:id="@+id/list_ride"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_ride" />
     </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_scooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollingCache="true"
+        android:smoothScrollbar="true"/>
 </LinearLayout>

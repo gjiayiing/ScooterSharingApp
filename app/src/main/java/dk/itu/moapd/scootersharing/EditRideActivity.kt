@@ -10,11 +10,15 @@ import dk.itu.moapd.scootersharing.databinding.ActivityStartRideBinding
 class EditRideActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEditRideBinding
+    companion object {
+        lateinit var ridesDB: RidesDB
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditRideBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        ridesDB = RidesDB.get(this)
 
         //Edit texts
         val lastAddedText = binding.infoText
@@ -37,12 +41,13 @@ class EditRideActivity : AppCompatActivity() {
                 lastAddedText.setText("")
                 nameText.setText("")
                 whereText.setText("")
+                ridesDB.updateScooter(name,where)
                 updateUI(formScooter)
             }
 
         }
     }
     private fun updateUI(update:Scooter){
-        binding.infoText.setText(update.toString())
+        binding.infoText.setText(ridesDB.getScooters().toString())
     }
 }

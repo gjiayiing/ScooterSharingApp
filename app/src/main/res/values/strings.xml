@@ -6,4 +6,5 @@
     <string name="name">Name:</string>
     <string name="where">Where:</string>
     <string name="add_ride">Add Ride</string>
+    <string name="list_ride">List Ride</string>
 </resources>

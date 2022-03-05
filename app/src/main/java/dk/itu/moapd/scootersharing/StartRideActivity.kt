@@ -9,9 +9,12 @@ import dk.itu.moapd.scootersharing.databinding.ActivityStartRideBinding
 class StartRideActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityStartRideBinding
-
+    companion object {
+        lateinit var ridesDB: RidesDB
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ridesDB = RidesDB.get(this)
         binding = ActivityStartRideBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -31,6 +34,7 @@ class StartRideActivity : AppCompatActivity() {
                 val where = whereText.text.toString().trim()
                 val timestamp = System.currentTimeMillis()
                 val formScooter = Scooter(name, where, timestamp)
+                ridesDB.addScooter(name,where)
 
                 //Reset the text fields and update the UI
                 lastAddedText.setText("")
