@@ -7,7 +7,7 @@ import kotlin.collections.ArrayList
 class RidesDB private constructor(context: Context){
 
     private val rides = ArrayList<Scooter>()
-    private var lastScooter = Scooter("","",0)
+//    private var lastScooter = Scooter("","",0)
 
     companion object : RidesDBHolder<RidesDB, Context>(::RidesDB)
 
@@ -34,7 +34,7 @@ class RidesDB private constructor(context: Context){
 
         val i = rides.size - 1
         val timestamp = System.currentTimeMillis()
-        rides.set(i, Scooter(name,where,timestamp))
+        rides[i] = Scooter(name,where,timestamp)
 
 //        for (i in rides.indices){
 //            if(rides[i].name == name){

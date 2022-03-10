@@ -2,7 +2,6 @@ package dk.itu.moapd.scootersharing
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import dk.itu.moapd.scootersharing.databinding.ActivityEditRideBinding
 
 
 class EditRideActivity : AppCompatActivity() {

@@ -1,9 +1,11 @@
 package dk.itu.moapd.scootersharing
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import dk.itu.moapd.scootersharing.databinding.FragmentStartRideBinding
 
@@ -17,7 +19,7 @@ class StartRideFragment : Fragment() {
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentStartRideBinding.inflate(inflater, container, false)
         ridesDB = RidesDB.get(requireContext())
         return binding.root
@@ -31,11 +33,15 @@ class StartRideFragment : Fragment() {
         val whereText = binding.whereText
 
         //Buttons
-//        addButton = findViewById(R.id.)
         val addButton = binding.startButton
         addButton.setOnClickListener {
-            if (nameText.text.isNotEmpty() &&
-                whereText.text.isNotEmpty()) {
+            if (TextUtils.isEmpty(nameText.text?.toString()) && TextUtils.isEmpty(whereText.text?.toString())) {
+                Toast.makeText(activity, "Please enter the details!", Toast.LENGTH_SHORT).show()
+            } else if (TextUtils.isEmpty(nameText.text?.toString())) {
+                Toast.makeText(activity, "Please enter your name!", Toast.LENGTH_SHORT).show()
+            }else if (TextUtils.isEmpty(whereText.text?.toString())) {
+                Toast.makeText(activity, "Please enter your destination!", Toast.LENGTH_SHORT).show()
+            } else {
                 //update the object attributes
                 val name = nameText.text.toString().trim()
                 val where = whereText.text.toString().trim()
@@ -49,6 +55,9 @@ class StartRideFragment : Fragment() {
                 nameText.setText("")
                 whereText.setText("")
                 updateUI(formScooter)
+                Toast.makeText(activity, "Ride Added!", Toast.LENGTH_LONG).show()
+//                val intent = Intent(requireContext(), ScooterSharingActivity::class.java)
+//                startActivity(intent)
             }
 
         }

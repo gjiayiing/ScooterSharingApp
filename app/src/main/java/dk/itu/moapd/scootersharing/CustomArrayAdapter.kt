@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.google.android.material.textview.MaterialTextView
 
 /**
  * A class to customize an adapter with a `ViewHolder` to populate a dummy dataset into a `ListView`.
@@ -64,7 +63,7 @@ class CustomArrayAdapter(context: Context, private var resource: Int, data: List
 
         viewHolder.viewName.text = scooter?.name
         viewHolder.viewWhere.text = scooter?.where
-        viewHolder.viewTimestamp.text = scooter?.convertLongToTime(scooter?.timestamp)
+        viewHolder.viewTimestamp.text = scooter?.convertLongToTime(scooter.timestamp)
 
         // Set the new view holder and return the view object.
         view?.tag = viewHolder

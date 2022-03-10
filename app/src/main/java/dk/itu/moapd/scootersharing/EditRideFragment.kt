@@ -21,7 +21,7 @@ class EditRideFragment : Fragment() {
 
     }
     override fun onCreateView(inflater:LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentEditRideBinding.inflate(inflater, container, false)
         ridesDB = RidesDB.get(requireContext())
         return binding.root
@@ -43,7 +43,6 @@ class EditRideFragment : Fragment() {
         whereText.setText(data.where)
 
         //Buttons
-//      addButton = findViewById(R.id.)
         val addButton = binding.updateButton
         addButton.setOnClickListener {
             if (TextUtils.isEmpty(nameText.text?.toString()) && TextUtils.isEmpty(whereText.text?.toString())) {
@@ -53,26 +52,20 @@ class EditRideFragment : Fragment() {
                 Toast.makeText(activity, "Please enter your name!", Toast.LENGTH_SHORT).show()
 
             }else if (TextUtils.isEmpty(whereText.text?.toString())) {
-                //update the object attributes
                 Toast.makeText(activity, "Please enter your destination!", Toast.LENGTH_SHORT).show()
 
             } else {
                 val name = nameText.text.toString().trim()
                 val where = whereText.text.toString().trim()
-                val timestamp = System.currentTimeMillis()
-                val formScooter = Scooter(name, where, timestamp)
 
                 //Reset the text fields and update the UI
                 lastAddedText.setText("")
                 nameText.setText("")
                 whereText.setText("")
                 ridesDB.updateScooter(name,where)
-                updateUI(formScooter)
+                Toast.makeText(activity, "Ride Updated!", Toast.LENGTH_LONG).show()
             }
-
         }
-
-
     }
 
     private fun convertLongToTime (time:Long) :String {
@@ -81,7 +74,4 @@ class EditRideFragment : Fragment() {
         return format.format(date)
     }
 
-    private fun updateUI(update:Scooter){
-        binding.infoText.setText(ridesDB.getScooters().toString())
-    }
 }
