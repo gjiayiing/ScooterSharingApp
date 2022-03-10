@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".ScooterSharingFragment">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start_name"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="120dp"
+            tools:layout_editor_absoluteX="146dp"
+            tools:layout_editor_absoluteY="162dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_ride"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_ride"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="106dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_ride"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/list_ride"
+            tools:layout_conversion_absoluteHeight="48dp"
+            tools:layout_conversion_absoluteWidth="105dp"
+            tools:layout_editor_absoluteX="153dp"
+            tools:layout_editor_absoluteY="258dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/list_scooter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollingCache="true"
+                android:smoothScrollbar="true"
+                tools:layout_conversion_absoluteHeight="235dp"
+                tools:layout_conversion_absoluteWidth="312dp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="306dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+
+
+

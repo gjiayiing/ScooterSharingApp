@@ -1,0 +1,93 @@
+package dk.itu.moapd.scootersharing
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import dk.itu.moapd.scootersharing.databinding.FragmentStartRideBinding
+
+
+class StartRideFragment : Fragment() {
+
+    private var _binding: FragmentStartRideBinding? = null
+    private val binding get() = _binding!!
+    companion object {
+        lateinit var ridesDB: RidesDB
+    }
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentStartRideBinding.inflate(inflater, container, false)
+        ridesDB = RidesDB.get(requireContext())
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //Edit texts
+        val lastAddedText = binding.infoText
+        val nameText = binding.nameText
+        val whereText = binding.whereText
+
+        //Buttons
+//        addButton = findViewById(R.id.)
+        val addButton = binding.startButton
+        addButton.setOnClickListener {
+            if (nameText.text.isNotEmpty() &&
+                whereText.text.isNotEmpty()) {
+                //update the object attributes
+                val name = nameText.text.toString().trim()
+                val where = whereText.text.toString().trim()
+                val timestamp = System.currentTimeMillis()
+                val formScooter = Scooter(name, where, timestamp)
+                ridesDB.addScooter(name,where)
+
+
+                //Reset the text fields and update the UI
+                lastAddedText.setText("")
+                nameText.setText("")
+                whereText.setText("")
+                updateUI(formScooter)
+            }
+
+        }
+
+    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        ridesDB = RidesDB.get(this)
+//        binding = ActivityStartRideBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        //Edit texts
+//        val lastAddedText = binding.infoText
+//        val nameText = binding.nameText
+//        val whereText = binding.whereText
+//
+//        //Buttons
+////        addButton = findViewById(R.id.)
+//        val addButton = binding.startButton
+//        addButton.setOnClickListener {
+//            if (nameText.text.isNotEmpty() &&
+//                whereText.text.isNotEmpty()) {
+//                //update the object attributes
+//                val name = nameText.text.toString().trim()
+//                val where = whereText.text.toString().trim()
+//                val timestamp = System.currentTimeMillis()
+//                val formScooter = Scooter(name, where, timestamp)
+//                ridesDB.addScooter(name,where)
+//
+//                //Reset the text fields and update the UI
+//                lastAddedText.setText("")
+//                nameText.setText("")
+//                whereText.setText("")
+//                updateUI(formScooter)
+//            }
+//
+//        }
+//    }
+    private fun updateUI(update:Scooter){
+        binding.infoText.setText(update.toString())
+    }
+}

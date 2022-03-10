@@ -15,13 +15,15 @@ class Scooter{
     }
     //removed getter and setters since they could be auto generated
 
+
+
     override fun toString(): String {
         val timestamp = convertLongToTime(timestamp)
         return "$name is placed at $where : $timestamp "
     }
 
 
-    private fun convertLongToTime (time:Long) :String {
+    fun convertLongToTime (time:Long) :String {
         val date = Date(time)
         val format = SimpleDateFormat("dd/MM/yyyy hh:mm:ss")
         return format.format(date)

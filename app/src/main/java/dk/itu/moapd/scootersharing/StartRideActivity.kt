@@ -2,50 +2,24 @@ package dk.itu.moapd.scootersharing
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import dk.itu.moapd.scootersharing.databinding.ActivityScooterSharingBinding
 import dk.itu.moapd.scootersharing.databinding.ActivityStartRideBinding
 
 
 class StartRideActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityStartRideBinding
-    companion object {
-        lateinit var ridesDB: RidesDB
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ridesDB = RidesDB.get(this)
-        binding = ActivityStartRideBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_start_ride)
 
-        //Edit texts
-        val lastAddedText = binding.infoText
-        val nameText = binding.nameText
-        val whereText = binding.whereText
+        val currentFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_start_container)
 
-        //Buttons
-//        addButton = findViewById(R.id.)
-        val addButton = binding.startButton
-        addButton.setOnClickListener {
-            if (nameText.text.isNotEmpty() &&
-                whereText.text.isNotEmpty()) {
-                //update the object attributes
-                val name = nameText.text.toString().trim()
-                val where = whereText.text.toString().trim()
-                val timestamp = System.currentTimeMillis()
-                val formScooter = Scooter(name, where, timestamp)
-                ridesDB.addScooter(name,where)
-
-                //Reset the text fields and update the UI
-                lastAddedText.setText("")
-                nameText.setText("")
-                whereText.setText("")
-                updateUI(formScooter)
-            }
-
+        if (currentFragment == null) {
+            val fragment = StartRideFragment()
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_start_container, fragment)
+                .commit()
         }
-    }
-    private fun updateUI(update:Scooter){
-        binding.infoText.setText(update.toString())
     }
 }

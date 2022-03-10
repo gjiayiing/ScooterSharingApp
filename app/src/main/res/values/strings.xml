@@ -7,4 +7,6 @@
     <string name="where">Where:</string>
     <string name="add_ride">Add Ride</string>
     <string name="list_ride">List Ride</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
