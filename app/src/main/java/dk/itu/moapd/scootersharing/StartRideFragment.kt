@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import dk.itu.moapd.scootersharing.databinding.FragmentStartRideBinding
 
@@ -31,6 +32,11 @@ class StartRideFragment : Fragment() {
         val lastAddedText = binding.infoText
         val nameText = binding.nameText
         val whereText = binding.whereText
+
+//        val inputText = binding.textField.editText?.text.toString()
+//        binding.textField.editText?.doOnTextChanged { inputText, _, _, _ ->
+//            Toast.makeText(activity, inputText, Toast.LENGTH_LONG).show()
+//        }
 
         //Buttons
         val addButton = binding.startButton

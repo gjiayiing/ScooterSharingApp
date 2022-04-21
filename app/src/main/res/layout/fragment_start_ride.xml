@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layoutMain"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context=".StartRideFragment">
 
@@ -48,7 +47,18 @@
             android:ems="10"
             android:inputType="textPersonName"
             />
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/textField"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="@string/name">-->
 
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                />-->
+
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
     </LinearLayout>
     <!--Where is the scooter parked?-->
     <LinearLayout
