@@ -48,6 +48,7 @@ class ScooterSharingFragment : Fragment() {
         ridesDB = RidesDB.get(requireContext())
         val data = ridesDB.getScooters()
         adapterR = CustomAdapter(data)
+
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapterR
 

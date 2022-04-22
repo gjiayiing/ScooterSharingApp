@@ -32,6 +32,8 @@ class StartRideFragment : Fragment() {
         val lastAddedText = binding.infoText
         val nameText = binding.nameText
         val whereText = binding.whereText
+        val statusText = binding.status
+        val priceText = binding.price
 
 //        val inputText = binding.textField.editText?.text.toString()
 //        binding.textField.editText?.doOnTextChanged { inputText, _, _, _ ->
@@ -52,8 +54,10 @@ class StartRideFragment : Fragment() {
                 val name = nameText.text.toString().trim()
                 val where = whereText.text.toString().trim()
                 val timestamp = System.currentTimeMillis()
-                val formScooter = Scooter(name, where, timestamp)
-                ridesDB.addScooter(name,where)
+                val status = statusText.text.toString().trim()
+                val price = priceText.text.toString().trim().toInt()
+                val formScooter = Scooter(name, where, timestamp, status, price)
+                ridesDB.addScooter(name,where,status, price)
 
 
                 //Reset the text fields and update the UI

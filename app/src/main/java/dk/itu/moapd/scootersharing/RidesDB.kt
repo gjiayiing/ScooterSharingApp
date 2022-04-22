@@ -1,6 +1,7 @@
 package dk.itu.moapd.scootersharing
 
 import android.content.Context
+import android.widget.ImageView
 import java.util.Random
 import kotlin.collections.ArrayList
 
@@ -13,13 +14,13 @@ class RidesDB private constructor(context: Context){
 
     init {
         rides.add(
-            Scooter("Chuck Norris", "ITU", randomDate())
+            Scooter("Chuck Norris", "ITU", randomDate(),"Available", 23, )
         )
         rides.add(
-            Scooter("Bruce Lee", "Fields", randomDate())
+            Scooter("Bruce Lee", "Fields", randomDate(),"Available", 50)
         )
         rides.add(
-            Scooter("Rambo", "Kobenhavns Lufthavn", randomDate())
+            Scooter("Rambo", "Kobenhavns Lufthavn", randomDate(), "Available", 13)
         )
     }
 
@@ -27,14 +28,14 @@ class RidesDB private constructor(context: Context){
         return rides
     }
 
-    fun addScooter(name:String, where:String) {
-        rides.add(Scooter(name, where, System.currentTimeMillis()))
+    fun addScooter(name:String, where:String, status:String, price:Int) {
+        rides.add(Scooter(name, where, System.currentTimeMillis(), status, price))
     }
-    fun updateScooter(name:String, where:String) {
+    fun updateScooter(name:String, where:String, status:String, price:Int) {
 
         val i = rides.size - 1
         val timestamp = System.currentTimeMillis()
-        rides[i] = Scooter(name,where,timestamp)
+        rides[i] = Scooter(name,where,timestamp, status, price)
 
 //        for (i in rides.indices){
 //            if(rides[i].name == name){

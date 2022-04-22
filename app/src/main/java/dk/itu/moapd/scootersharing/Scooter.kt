@@ -1,9 +1,10 @@
 package dk.itu.moapd.scootersharing
 
+import android.widget.ImageView
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Scooter(var name: String, var where: String, var timestamp: Long) {
+class Scooter(var name: String, var where: String, var timestamp: Long, /*var photo: ImageView,*/var status: String, var price: Int) {
 
     override fun toString(): String {
         val timestamp = convertLongToTime(timestamp)

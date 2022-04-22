@@ -32,6 +32,8 @@ class EditRideFragment : Fragment() {
         val lastAddedText = binding.infoText
         val nameText = binding.nameText
         val whereText = binding.whereText
+        val statusText = binding.status
+        val priceText = binding.price
 
 
         ridesDB = RidesDB.get(requireContext())
@@ -41,6 +43,8 @@ class EditRideFragment : Fragment() {
         lastAddedText.setText(convertLongToTime(data.timestamp))
         nameText.setText(data.name)
         whereText.setText(data.where)
+        statusText.setText(data.status)
+        priceText.setText(data.price.toString())
 
         //Buttons
         val addButton = binding.updateButton
@@ -57,12 +61,15 @@ class EditRideFragment : Fragment() {
             } else {
                 val name = nameText.text.toString().trim()
                 val where = whereText.text.toString().trim()
+                val status = statusText.text.toString().trim()
+                val price = priceText.text.toString().trim().toInt()
+
 
                 //Reset the text fields and update the UI
                 lastAddedText.setText("")
                 nameText.setText("")
                 whereText.setText("")
-                ridesDB.updateScooter(name,where)
+                ridesDB.updateScooter(name,where, status, price)
                 Toast.makeText(activity, "Ride Updated!", Toast.LENGTH_LONG).show()
             }
         }
