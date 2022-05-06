@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "790988957033",
+    "firebase_url": "https://scootersharing-f74c3-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "scootersharing-f74c3",
     "storage_bucket": "scootersharing-f74c3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:790988957033:android:79ee4db411f6d97d6749f8",
+        "mobilesdk_app_id": "1:790988957033:android:9ab040b7d917fea76749f8",
         "android_client_info": {
           "package_name": "dk.itu.moapd.scootersharing"
         }

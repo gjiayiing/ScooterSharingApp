@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_edit_ride.xml" value="0.12604166666666666" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_scooter_sharing.xml" value="0.14175724637681159" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_start_ride.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_edit_ride.xml" value="0.22" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_profile.xml" value="0.22" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_ride.xml" value="0.1" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_ride_end.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_scan.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_scooter_sharing.xml" value="0.1796875" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/activity_start_ride.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_create_scooter.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_edit_scooter.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_end_ride_dialog.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_maps.xml" value="0.1015625" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_ride_activity.xml" value="0.12228260869565218" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_scan.xml" value="0.12228260869565218" />
         <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_scooter_sharing.xml" value="0.22" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_start_ride.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/list_item.xml" value="0.25260960334029225" />
-        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/list_rides.xml" value="0.1" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_start_ride.xml" value="0.25" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/fragment_take_scooter_picture.xml" value="0.22" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/layout/list_item.xml" value="0.1" />
+        <entry key="..\:/Users/jiayiing/AndroidStudioProjects/ScooterSharing/app/src/main/res/menu/navigation_menu.xml" value="0.22" />
       </map>
     </option>
   </component>

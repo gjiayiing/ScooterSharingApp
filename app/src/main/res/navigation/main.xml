@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/menuHome">
+    <fragment
+        android:id="@+id/menuHome"
+        android:name="dk.itu.moapd.scootersharing.ui.ScooterSharingFragment"
+        android:label="Scooter Sharing"
+        tools:layout="@layout/fragment_scooter_sharing" >
+        <action
+            android:id="@+id/menuScooter"
+            app:destination="@id/takeScooterPictureFragment" />
+        <action
+            android:id="@+id/menuRide"
+            app:destination="@id/rideActivity" />
+        <action
+            android:id="@+id/endRide"
+            app:destination="@id/rideEndActivity" />
+        <action
+            android:id="@+id/menuProfile"
+            app:destination="@id/viewProfileActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/takeScooterPictureFragment"
+        android:name="dk.itu.moapd.scootersharing.ui.TakeScooterPictureFragment"
+        android:label="fragment_take_scooter_picture"
+        tools:layout="@layout/fragment_take_scooter_picture" />
+    <fragment
+        android:id="@+id/editScooterFragment"
+        android:name="dk.itu.moapd.scootersharing.ui.EditScooterFragment"
+        android:label="fragment_edit_scooter"
+        tools:layout="@layout/fragment_edit_scooter" />
+    <activity
+        android:id="@+id/rideActivity"
+        android:name="dk.itu.moapd.scootersharing.ui.RideActivity"
+        android:label="activity_ride"
+        tools:layout="@layout/activity_ride" />
+    <activity
+        android:id="@+id/rideEndActivity"
+        android:name="dk.itu.moapd.scootersharing.ui.RideEndActivity"
+        android:label="activity_ride_end"
+        tools:layout="@layout/activity_ride_end" />
+    <activity
+        android:id="@+id/viewProfileActivity"
+        android:name="dk.itu.moapd.scootersharing.ui.ProfileActivity"
+        android:label="activity_ride_end"
+        tools:layout="@layout/activity_profile" />
+</navigation>
